@@ -165,3 +165,10 @@ dw 0xAA55
 ```
 ### Results
 - This was training on BIOS, I mastered the basics (and I understand that there is SIMD and `rep movsd` with double words and many more possibilities), and when I figure out how to compile code for UEFI (including PE headers and other structures), I will start writing normal code for UEFI instead of the archaic BIOS.
+### What I can do, what is relevant
+```diff asm
+- Windows	skip	
+! Linux		maybe	
++ BIOS		legacy	
+! UEFI		pending	
+```
