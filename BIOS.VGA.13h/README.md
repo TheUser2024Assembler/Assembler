@@ -167,7 +167,7 @@ dw 0xAA55
 ;I'm placing the texture.
 use16
 org 0x7C00
-count:mov ax,0x0013;I learned that you can use unnecessary code in RAM as a garbage dump for variables.
+count:mov ax,0x0013;I realized that it is possible to litter obsolete code with a mess of variables.
 int 0x10
 mov ax,0xA000
 mov es,ax
