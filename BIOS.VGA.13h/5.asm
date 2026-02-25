@@ -1,6 +1,6 @@
 use16
 org 0x7C00
-count:mov ax,0x0013
+var0:mov ax,0x0013
 int 0x10
 mov ax,0xA000
 mov es,ax
@@ -8,18 +8,20 @@ xor di,di
 mov cx,32000
 xor ax,ax
 rep stosw
-mov byte[count+1],0
-mov byte[count+2],0
-mov byte[count],4
+mov byte[var0+1],0
+mov byte[var0+2],0
+mov byte[var0],4
 s:call d
-add byte[x],8
-dec byte[count]
+add byte[var0+1],8
+dec byte[var0]
 jnz s
 jmp $
 c:db 0xAA,0x55,0xAA,0x55,0xAA,0x55,0xAA,0x55
+x:db 0
+y:db 0
 d:mov si,c
-movzx bx,byte[count+1]
-movzx ax,byte[count+2]
+movzx bx,byte[var0+2]
+movzx ax,byte[var0+1]
 mov cx,320
 imul bx,cx
 add bx,ax
